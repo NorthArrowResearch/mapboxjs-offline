@@ -7,6 +7,12 @@ It's going to mean drawing a rectangle and offline caching whatever tiles are un
 ### Expected Challenges
 
 * PWA offline cache capacity is variable. 50Mb - 20Gb or 4% of disk space (whatever is smaller). We need to fail safe so that people always have something offline (even if it's not very high res).
+* We'll need some way to draw a rectangle. That rectangle may need to be constrained based on size constraints above: <https://github.com/edgespatial/mapbox-gl-draw-rectangle-mode/blob/master/src/index.js>
+* Need a way to communicate between our react elements and our service worker. 
+    * Initiate cache on a rectangle
+    * Purge existing cache
+    * change the rectangle
+
 
 <https://gis.stackexchange.com/questions/133205/wmts-convert-geolocation-lat-long-to-tile-index-at-a-given-zoom-level>
 

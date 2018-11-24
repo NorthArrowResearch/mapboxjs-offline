@@ -1,0 +1,16 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "standard",
+    "standard-react"
+  ],
+  "rules": {
+    "brace-style": ["error", "stroustrup"],
+    "no-unused-vars": 1,
+    "react/no-unused-prop-types": 1
+  },
+  "env": {
+    "jest": true,
+    "browser": true
+  }
+}
