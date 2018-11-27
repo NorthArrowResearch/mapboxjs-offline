@@ -1,0 +1,71 @@
+body, #root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
+
+.selectRect {
+  border: 0.7rem dashed #444444;
+  width: 75%;
+  position: absolute;
+  height: 75%;
+  left: 12.5%;
+  top: 12.5%;
+  text-align: center;
+
+  .areaLabel {
+    font-size: 3rem;
+    top: 50%;
+    width: 100%;
+    position: absolute;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+  }
+  .warning {
+    position: absolute;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1;
+    top: 60%;
+    width: 100%;
+    color: red;
+    text-shadow: 2px 2px 5px black;
+    padding: 0 0.5rem;
+    font-weight: bold;
+  }
+  &.locked {
+    border-color: black;
+    background: #00000044;
+    .areaLabel {
+      color: white;
+    }
+  }
+  &.positive {
+    border-color: green;
+    background: #00FF0022;
+    .areaLabel {
+      color: green;
+    }
+  }
+  &.negative {
+    border-color: red;
+    background: #FF000044;
+    .areaLabel {
+      color: red;
+    }
+  }
+}
+
+
+
+
+
+.downloadBtn {
+  position: absolute;
+  left: 12.5%;
+  top: 87.5%;
+  width: 75%;
+}
