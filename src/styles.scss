@@ -43,6 +43,13 @@ body, #root {
       color: white;
     }
   }
+  &.navigating {
+    border-color: black;
+    background: #00000044;
+    .areaLabel {
+      color: white;
+    }
+  }
   &.positive {
     border-color: green;
     background: #00FF0022;
@@ -63,7 +70,7 @@ body, #root {
 
 
 
-.downloadBtn {
+.funcButton {
   position: absolute;
   left: 12.5%;
   top: 87.5%;
