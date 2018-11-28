@@ -14,7 +14,7 @@ Math.sec = x => 1 / Math.cos(x)
  * @param {*} bottom
  * @param {*} right
  */
-export function getTiles (top, left, bottom, right, zoomRange) {
+export function getTiles (top, right, bottom, left, zoomRange) {
   const tiles = []
 
   for (let zoom = zoomRange[0]; zoom <= zoomRange[1]; zoom++) {
@@ -30,7 +30,8 @@ export function getTiles (top, left, bottom, right, zoomRange) {
       }
     }
   }
-  console.log('Starting Coords', { tiles, top, left, bottom, right })
+  return tiles
+  // console.log('Starting Coords', { tiles, top, left, bottom, right })
 }
 
 /**
@@ -61,8 +62,20 @@ export const lat2tile = (lat, zoom) => Math.floor(
   ) / Math.PI) / 2 * Math.pow(2, zoom)
 )
 
-export const getTileURL = (x, y, z) => {
-  let url = process.env.REACT_APP_MAPBOX_TILEURL + `?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`
-  url.replace('{x}/{y}/{z}', `${z}/${x}/${y}`)
-  return url
+export const getTileURL = (zoom, x, y) => {
+  const url = process.env.REACT_APP_MAPBOX_TILEURL + `?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`
+  const newUrl = url.replace('{z}/{x}/{y}', `${zoom}/${x}/${y}`)
+  return newUrl
+}
+
+/**
+ * Good for comparing two purely numeric arrays
+ * @param {*} arr1
+ * @param {*} arr2
+ */
+export function numericArrayCompare (arr1, arr2) {
+  if (!Array.isArray(arr1) || !Array.isArray(arr2)) return false
+  if (arr1.length !== arr2.length) return false
+
+  return !arr1.some((el, idx) => el !== arr2[idx])
 }

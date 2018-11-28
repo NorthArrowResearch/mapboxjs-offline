@@ -15,8 +15,16 @@ const Rectangle = ({ state, progress, area, maxArea }) => {
       </div>
 
       {state === STATES.DOWNLOADING ? (
-        <Progress value={progress[0]} total={progress[1]} inverted progress='value' success={progress[0] >= 100}>
-          Downloading Tiles
+        <Progress
+          percent={Math.floor(100 * progress[0] / progress[1])}
+          color='blue'
+          size='big'
+          inverted
+          active
+          progress='percent'
+          success={progress[0] >= progress[1]}
+        >
+          Downloading Tiles ({progress[0]}/{progress[1]})
         </Progress>
       ) : null}
 

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bottleneck": "^2.13.0",
     "deck.gl": "^6.3.0",
     "immutable": "^4.0.0-rc.12",
     "node-sass": "^4.10.0",

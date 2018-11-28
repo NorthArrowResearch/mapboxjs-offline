@@ -64,6 +64,21 @@ body, #root {
       color: red;
     }
   }
+
+  &.downloading {
+    border-color: rgb(168, 168, 0);
+    background: rgba(0, 0, 0, 0.7);
+    .areaLabel {
+      color: white;
+    }
+  }
+
+  .ui.progress{
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 60%;
+  }
 }
 
 
